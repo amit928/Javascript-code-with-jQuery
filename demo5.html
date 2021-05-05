@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form name="form1">
+        User Name : <input type="text" placeholder="Enter your user name here ." name="nameinput"><br><br>
+        Password : <input type="password" placeholder="Enter your Password here ." name="passwordinput"><br><br>
+        <input type="checkbox" name="checkboxinput" value="Yes Agree">Agree All terms And Conditions .<br><br>
+        Do you really want to continue <input type="radio" value="Yes" name="radio1">Yes<input type="radio" value="No" name="radio2">No<br><br>
+        <button type="submit" id="submitbutton">Submit</button>
+    </form>
+    
+</body>
+<script>
+    body=document.body;
+    body.style.backgroundColor="Grey";
+    form1=document.form1;
+    form1.style.backgroundColor="White";
+    form1.style.border="2px solid ";
+    form1.style.padding="10px";
+    button=document.getElementById("submitbutton");
+    button.onclick=function()
+    {
+        alert("Form submitted successfully");
+        name=form1.nameinput.value;
+        document.write("user name : ",name,"<br>");
+        password=form1.passwordinput.value;
+        document.write("Password : ",password,"<br>");
+        checkbox=form1.checkboxinput.checked;
+        document.write("Are you agree with all terms and conditions ? ",checkbox,"<br>")
+        radio1=form1.radio1.value;
+        document.write("Do you really want to continue ? ",radio1,"<br>");
+    };
+    
+</script>
+</html>

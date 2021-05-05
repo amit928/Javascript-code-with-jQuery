@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Time</title>
+</head>
+<body>
+    
+    Date : <input type="date" id="datevalue"><br><br>
+    Time : <input type="time" id="timevalue" step="2"><br><br>
+    <button type="submit" onclick="datetime();">Click Here</button>
+    
+    <p id="ptag">After click the button here your time will print .</p>
+    <script>
+        function datetime()
+        {
+            date=document.getElementById("datevalue");
+            time=document.getElementById("timevalue");
+            ptag=document.getElementById("ptag");
+            date=new Date(date.value+" "+time.value);
+            // console.log(date.getDay());
+            p1=document.getElementById("ptag");
+            dateinput=("Your entered date is : "+date.getDate());
+            monthinput=("Your entered month is : "+date.getMonth());
+            yearinput=("Your entered year is : "+date.getFullYear());
+            hourinput=("Your entered hour is : "+date.getHours());
+            minuteinput=("Your entered minute is : "+date.getMinutes());
+            secondinput=("Your entered second is : "+date.getSeconds());
+            millisecondinput=("Your entered millisecond is : "+date.getMilliseconds());
+            p1.innerHTML=(dateinput+"<br>"+monthinput+"<br>"+yearinput+"<br>"+hourinput+"<br>"+minuteinput+"<br>"+secondinput+"<br>"+millisecondinput);
+            console.log(dateinput);
+            
+        }
+        setTimeout(datetime,5000);
+    </script>
+</body>
+</html>

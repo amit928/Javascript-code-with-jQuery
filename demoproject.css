@@ -1,0 +1,139 @@
+
+            body{
+                background: linear-gradient(to right,rgb(181, 255, 83),green,rgb(246, 0, 0),rgb(6, 6, 24)) ;
+                height: 670px;
+                width:1200px;
+                
+            }
+            .form{
+                position: fixed;
+                height: 595px;
+                width: 1100px;
+                border-radius: 55px;
+                margin-top: 45px;
+                margin-left: 110px;
+                margin-bottom: 100px;
+                background-color: black;
+                /* background:linear-gradient(black,red); */
+                text-align: center;
+            }
+            div{
+                color: white;
+                font-size: 40px;
+                position: absolute;
+                top: 110px;
+                left: 630px;
+                font-weight: bold;
+                
+            }
+            .username{
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 180px;
+                left: 600px;
+                }
+            #textboxid1{   height: 50px;
+                font-size: 20px;
+                width: 300px;
+                border-radius: 25px;
+                background-color: rgb(216, 214, 214);
+                border: none;
+                font-weight: bold;
+               transition: transform;
+                }
+                #textboxid1:hover{transform: scale(1.15);}
+            .password{
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 270px;
+                left: 600px;
+                
+            }
+            #textboxid2{
+                height: 50px;
+                width: 300px;
+                font-size: 20px;
+                border-radius: 25px;
+                background-color: rgb(216, 214, 214);
+                border: none; 
+                transition: transform;  
+            }
+            #textboxid2:hover{transform: scale(1.15);}
+
+            .submit{
+                color: white;
+                font-weight: bold;
+
+                position: absolute;
+                top: 360px;
+                left: 602px;
+                height: 50px;
+                width: 300px;
+                font-size: 18px;
+                background: rgb(149, 245, 5);
+                border: none;
+                border-radius: 25px;   
+                text-transform: uppercase; 
+                transition: transform ;            
+            }            
+            .submit:hover{
+                transform: scale(1.15);
+            }
+            .p1{
+                color: white;
+                position: absolute;
+                top: 420px;
+                left: 635px;
+                font-size: 18px;
+                word-spacing: 10px;
+            }
+            .div1{
+                
+                position: absolute;
+                top: 490px;
+                left: 70px;
+                width: 250px;
+                font-size: 25px;
+                padding: 5px 8px 7px 8px;
+                border: none;
+                background: linear-gradient(to top,rgb(16, 167, 236),rgb(250, 100, 212));
+                /* opacity: 0.5; */
+                border-radius: 25px;
+                transition: transform;
+                display: inline-block;
+            }
+            .div1:hover{transform: scale(1.2);}
+           
+            .div2{
+                position: absolute;
+                border: none;
+                top: 200px;
+                left: 230px;
+                border-radius: 100%;
+                padding: 0;
+            }
+            .img1{
+                
+                transition: transform;
+            }
+            .img1:hover{
+                transform: scale(1.2);
+            }
+            .a1{
+                
+                transition: transform;
+                display: inline-block;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .a1:hover{transform: scale(1.1); color: red;}
+            .span{
+                font-size: 45px;
+                text-decoration: none;
+                position: relative;
+                left: 5px;
+                top: 7px;
+            }
+        

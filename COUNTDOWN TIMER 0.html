@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown-Timer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 70px;
+            background-color: rgb(206, 47, 255);
+            color: rgb(252, 20, 20);
+            font-weight: bold;
+
+            font-size: 50px;
+            text-align: center;
+        }
+
+        button {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            color: lavenderblush;
+            background-color: indigo;
+            font-size: 30px;
+        }
+
+        #form1 {
+
+            height: 470px;
+            width: 800px;
+            margin-left: 280px;
+            padding-top: 50px;
+            border-radius: 50px;
+            background: linear-gradient(to right, white, pink);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form1">
+        <input type="date" id="dateinput" style="color: rgb(250, 249, 250); font-size: 50px; background-color: black;"
+            ><br><br>
+        <input type="time" id="timeinput" step="2"
+            style="color: rgb(249, 250, 246); font-size: 50px; background-color: black;">
+        <br><br>
+        <p id="span1" style="margin-bottom: 60px; font-weight: bold;"></p>
+        <button onclick="timer1()">SET TIMER</button>
+    </div>
+
+</body>
+<script>
+    var giventime,days,hours,minutes,seconds;
+    function timer() {
+
+        // This is the code for taking your input time .
+        var inputdate = document.getElementById("dateinput").value;
+        var inputtime = document.getElementById("timeinput").value;
+        
+        
+        giventime = new Date(inputdate + " " + inputtime).getTime();
+        
+        // Here I will substract the input time to given time to find the rest of the time for countdown timer .
+        var diff = giventime - Date.now();
+
+        if (diff <0) 
+        {
+            span1.innerHTML = "OOPS.. SESSION EXPIRED ....";
+        }
+        else
+        {
+        //This is the most important formula for countdown timer .
+        days = Math.floor(diff / (1000 * 3600 * 24));
+        hours = Math.floor((diff % (1000 * 3600 * 24)) / (1000 * 3600));
+        minutes = Math.floor((diff % (1000 * 3600)) / (1000 * 60));
+        seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        span1.innerHTML = days + " Days  " + hours + " h  " + minutes + " m  " + seconds + " s ";
+        }
+    }
+
+    function timer1() 
+    {
+        clear = setInterval(timer, 1000); 
+    }
+    
+</script>
+
+</html>

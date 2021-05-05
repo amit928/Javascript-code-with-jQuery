@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <h1 style="font-size: 50px; color: azure;" id="h1">My first javascript code .</h1>
+    <h2 style="color:chartreuse; font-size: 40px;" id="h2">My previous codes has been deleted .</h2>
+    <p style="text-align: center; color: cyan; font-family: 'Times New Roman', Times, serif; " id="p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro sequi ut natus voluptatibus, obcaecati aperiam ratione, in consequatur voluptate exercitationem est! Soluta obcaecati odit temporibus quis id enim repellat repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, corporis cumque delectus hic repellendus iste blanditiis error similique quasi placeat asperiores unde dolore nobis ea, laboriosam voluptates odio, impedit ad ipsum quo? Ipsum obcaecati alias suscipit esse vero iusto atque dignissimos accusantium doloremque beatae laboriosam nobis praesentium reprehenderit, ipsa unde.</p>
+    <button onmouseover="clickhere();" onmouseout="clickhere1();"  id="button">click here</button>
+    <script>
+        function clickhere()
+        {
+        var body=document.body;
+        body.style.backgroundColor="white";
+        var h1=document.getElementById("h1");
+        // h1.style.fontSize="60px";
+        h1.style.color="black";
+        var h2=document.getElementById("h2");
+        // h2.style.fontSize="20px";
+        h2.style.color="black";
+        var p=document.getElementById("p");
+        p.style.color="black";
+        p.style.textTransform="uppercase";
+        var button=document.getElementById("button");
+        button.style.transform="scale(2)"
+        }
+
+        function clickhere1()
+        {
+        var body=document.body;
+        body.style.backgroundColor="white";
+        var h1=document.getElementById("h1");
+        // h1.style.fontSize="50px";
+        h1.style.color="black";
+        var h2=document.getElementById("h2");
+        // h2.style.fontSize="40px";
+        h2.style.color="black";
+        var p=document.getElementById("p");
+        p.style.color="black";
+        p.style.textTransform="lowercase";
+        var button=document.getElementById("button");
+        button.style.transform="scale()"
+        }
+    </script>
+</body>
+</html>

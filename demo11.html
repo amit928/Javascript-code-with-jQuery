@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATE AND TIME INPUT</title>
+</head>
+<body>
+    DATE : <input type="date" id="dateinput">
+    TIME : <input type="time" id="timeinput">
+    <button onclick="datetime()" id="button">ClickHere</button>
+    <p id="ptag">Whatever we gave input , it will show here .</p>
+    <script>
+        function datetime()
+        {
+        date=document.getElementById("dateinput");
+        time=document.getElementById("timeinput");
+        ptag=document.getElementById("ptag");
+        inputdatetime=new Date(date.value+" "+time.value);
+        date=("Your entered date is : " +inputdatetime.getDate());
+        ptag.innerHTML=date;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Countdown-Timer</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(9, 246, 187);
+            color: black;
+        }
+        #div
+        {
+            font-size: 70px; 
+            margin:20px 0 0 300px; 
+            padding: 100px 0 100px 235px; 
+            background: linear-gradient(to right, rgb(221, 200, 17), rgb(54, 54, 39)); 
+            width: 535px; 
+            border-radius: 40px;
+           
+        }
+        #numberinput
+        {
+            font-size: 70px; width: 200px; height: 60px; background-color: darkgray;
+        }
+        span
+        {
+            font-size: 70px; background-color: transparent; color: rgb(0, 0, 0); 
+        }
+        button{
+            font-size: 40px;  margin:20px 0 0 550px; background-color: rgb(79, 246, 79);  width: 200px; color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"  ">
+        <input type="number" id="numberinput"  ><span >Sec</span><br>
+        <br>
+    </div>
+    <button onclick="fun();" >Set Timer</button>
+    <script>
+        var clear;
+
+        /* var count=prompt("Enter your time  in SECOND ."); */
+        var count,inputnumber;
+        
+        function fun() {
+            // The below two lines are taking input from the user and give the value to the count variable as string .
+            inputnumber = document.getElementById("numberinput");
+            count = inputnumber.value;
+
+            // Here it checks either the user give input or not , If the user doesnot , then It will show an alert message and return to its previous part .
+            if(count==="")
+            {
+                alert("Please Enter some valid value .");
+                return;
+            }
+            // Here count converts the string in to interger and add 1 to give output what the user requires .
+            count=parseInt(count)+parseInt(1);
+            
+            // It is used to call the function "fun1" repeatedly in every 1 sec .
+            clear = setInterval(fun1, 1000);
+        }
+
+        function fun1() {
+            // It decrements the count value .
+            count = count - 1;
+            // When the count value comes to zero then it breaks the repetation and retrun back.
+            if (count <= 0) {
+                clearInterval(clear);
+
+                document.getElementById("div").innerHTML = "EXPIRED ..."
+                return;
+            }
+            document.getElementById("div").innerHTML = count + " secs";  
+
+        }
+
+    </script>
+</body>
+
+</html>

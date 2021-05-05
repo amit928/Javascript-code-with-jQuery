@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital Watch</title>
+    <style>
+        body
+        {
+            background-image: linear-gradient(to right,yellow, black);
+        }
+        .container
+        {
+            position: fixed;
+            left: 300px;
+            top: 90px;
+            background-image: linear-gradient(to left,red,black);
+            color: white;
+            font-size: 100px;
+            height: 200px;
+            width: 550px;
+            border-radius: 15px;
+            font-weight: bolder;
+            padding: 90px 75px 90px 95px;
+            text-align: center;
+            
+            /* box-shadow: 3px 5px 10px 5px rgb(53, 52, 53); */
+        }
+        #span1
+        {
+            position: fixed;
+            top: 160px;
+            left: 440px;
+            font-size: 130px;
+        }
+        #span2
+        {
+            position: fixed;
+            font-size: 50px;
+            top: 300px;
+            left: 830px;
+        }
+        #span3
+        {font-size: 40px; position: fixed; left: 700px; top: 400px;}
+        #start-button{
+            position: fixed;
+            top: 400px;
+            left: 330px;
+            height: 50px;
+            width: 70px;
+            border-radius: 30px;
+            background-color: rgb(0, 255, 213);
+            color: black;
+            font-weight: bold;
+        }
+        #start-button:hover{
+            transform: scale(1.2);
+        }
+        #stop-button{
+            position: fixed;
+            top: 400px;
+            left: 420px;
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            background-color:  rgb(0, 255, 213);
+            color: black;
+            font-weight: bold;
+        }
+        #stop-button:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainbox">
+        <span id="span1"></span> <span id="span2"> </span>
+        <br><span id="span3"></span>
+        <button onclick="start();" id="start-button">START</button>
+        <button onclick="stop();" id="stop-button">STOP</button>
+    </div>
+
+    <script>
+        
+        timemachine=()=>{
+        ptag=document.getElementById("ptag");
+        divtag=document.getElementById("mainbox");
+        let time=new Date()
+        let week=new Array(7);
+        week[0]="Sunday";
+        week[1]="Monday";
+        week[2]="Tuesday";
+        week[3]="Wednesday";
+        week[4]="Thursday";
+        week[5]="Friday";
+        week[6]="Saturday";
+        days=week[time.getDay()];
+        date=time.getDate();
+        month=time.getMonth()+1;
+        year=time.getFullYear();
+        hours=time.getHours();
+        minutes=time.getMinutes();
+        seconds=time.getSeconds();
+        milliseconds=time.getMilliseconds();
+        
+        if(hours<12)
+        {
+            time=hours+":"+minutes+" "+"AM";
+        }
+        else if(hours==12)
+        {
+            time=hours+":"+minutes;
+        }
+        else
+        {
+            time=hours+":"+minutes+" "+"PM";
+        }
+        
+        time_seconds=seconds+":"+milliseconds;
+        date=date+":"+month+":"+year;
+        span1.innerHTML=time;
+        span2.innerHTML=time_seconds;
+        span3.innerHTML="Date : "+date;
+        
+        }
+        start=()=>{
+        reset=setInterval(timemachine,1);
+        }
+        stop=()=>
+        {
+            clearInterval(reset);
+        }
+    </script>
+</body>
+</html>

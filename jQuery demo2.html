@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 2</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 id="h1tag"></h1>
+    <h2 class="h2tag"></h2>
+    <h3></h3>
+    <p name="paragraph"></p>
+    <h1 id="h1tag1"></h1>
+
+    <script>
+        $("#h1tag").text("This is the H1 tag .");
+        $(".h2tag").text("This is the H2 tag .");
+        $("h3").text("This is the H3 tag .");
+        $("p[name='paragraph']").text("This is a paragraph tag ..");
+        $("h1[id='h1tag1']").text("This is the H1 tag with attribute id");
+    </script>
+</body>
+</html>

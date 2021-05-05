@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formname" onsubmit="return returnerror()">
+        Name: <input type="text" placeholder="Enter Your Name Here" name="nameinput" id="nameinputid" required><span style="color: red;" id="nameerror"></span><br><br>
+        Email Id : <input type="email" placeholder="Enter Your Mail" name="emailinput" required><br><br>
+        Password <input type="password" placeholder="Enter Your Password Here" name="passwordinput" id="passwordinputid"><span style="color: red;" id="passworderror"></span><br><br>
+        <input type="checkbox" id="checkboxid" > Agree with all terms and conditions . <b><span style="color: #ff0000;" id="checkboxerror"></span></b><br><br>
+        <button type="submit"  name="submitbutton" >Submit</button>
+    </form>
+    <script>
+        
+        // function submit1()
+        // {
+        //     // The below line is compulsory for declaring the form1
+        //     form1=document.forms.formname;
+
+        //     name1=form1.nameinput.value;
+            
+        //     document.write("Name : ",name1,"<br><br>");
+
+        //     email=form1.emailinput.value;
+        //     document.write("Email Id : ",email,"<br><br>");
+
+        //     password=form1.passwordinput.value;
+        //     document.write("Password : ",password,"<br><br>");
+            
+        // }
+
+        
+        function returnerror()
+        {
+            // Name errors
+            name1=document.getElementById("nameinputid");
+            shownameerror=document.getElementById("nameerror");
+
+            if(name1.value.length==0)
+            {
+                shownameerror.innerHTML="*Name must have characters";
+                return false;
+            }
+            else
+            {
+                shownameerror.innerHTML="";   
+            }
+            if(name1.value.length>=20)
+            {
+                shownameerror.innerHTML="*Name should be between 20 characters .";
+                return false;
+            }
+            // Password errors
+            pass1=document.getElementById("passwordinputid");
+            showpassworderror=document.getElementById("passworderror");
+
+            if(pass1.value.length==0)
+            {
+              
+              showpassworderror.innerHTML="*Your password must have some characters"
+              return false;
+            }
+            if(pass1.value.length<8)
+            {
+              showpassworderror.innerHTML="*Your password must be 8 characters OR more "
+              return false;
+            }
+            // password must have an integer 
+            if(pass1.value.search(/[0-9]/)==-1)
+            {
+              showpassworderror.innerHTML="*Your password  must have at least one integer"
+              return false;
+            }
+            // password must have at least an uppercase letter
+            if(pass1.value.search(/[A-Z]/)==-1)
+            {
+              showpassworderror.innerHTML="*Your password  must have at least one upper case letter "
+              return false;
+            }
+            // password must have at least a lowercase letter
+            if(pass1.value.search(/[a-z]/)==-1)
+            {
+              showpassworderror.innerHTML="*Your password  must have at least one lower case letter "
+              return false;
+            }
+            // password must have at least a special character 
+            if(pass1.value.search(/[!\@\#\$\%\^\&\?\~]/)==-1)
+            {
+              showpassworderror.innerHTML="*Your password  must have at least one special character "
+              return false;
+            }
+            
+            else
+            {
+                showpassworderror.innerHTML="";
+            }
+
+            // Checkbox errors
+            checkbox1=document.getElementById("checkboxid");
+            showcheckboxerror=document.getElementById("checkboxerror");
+            
+            if(checkbox1.checked===false)
+            {
+                showcheckboxerror.innerHTML="*You have to accept all terms and conditions";
+                return false;
+            }
+
+        }
+    
+        
+    </script>
+</body>
+</html>

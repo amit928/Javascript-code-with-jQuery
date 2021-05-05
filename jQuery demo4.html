@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 4</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- <button id="btag">Click Me</button><br>
+    <p id="ptag"></p> -->
+
+    <p id="ptag">This is the paragraph tag .</p>
+    Name : <input type="text" id="inputtext" placeholder="Enter your name">
+    <button id="btag">Click Me</button>
+
+    <script>
+         // $(document).ready(function()
+        // {
+        //     $("#btag").click(function()
+        //     {
+        //         $("#ptag").text("This is the paragraph .");
+        //     })
+        // });
+
+        // --------You can write like this also---------- .
+
+        // $(document).click(function()
+        // {
+        //     $("#ptag").text("This is the paragraph .");
+        // });
+
+        $(document).ready(function()
+        {
+            // $("#btag").hover(function()
+            // $("#btag").mousedown(function()
+            // $("#btag").mouseenter(function()
+            // $("#btag").mouseup(function()
+            // $("#btag").mouseleave(function()
+            // $("#btag").scroll(function()
+            $("#btag").click(function()
+            {
+                $("#ptag").html("My name is : "+ $("#inputtext").val());
+            });
+        });
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form creating</title>
+</head>
+<body>
+    <form name="form1">
+        Name : <input type="text" placeholder="Ex: Amit Kumar Mallick" id="nameinput"><br><br>
+        Email Id : <input type="email" placeholder="Ex : someone@gmail.com" id="mailinput"><br><br>
+        Mobile No : <input type="number" placeholder="+911234567890" id="numberinput"><br><br>
+        <input type="checkbox" id="checkboxinput"> I agree all <a href="demo5.html"> terms and conditions </a>.<br><br>
+        Do you really want to log in this page <input type="radio" name="radio1" value="Yes"> Yes
+        <input type="radio" name="radio1" value="No"> No <br><br>
+        <button type="submit" id="button">Submit</button>
+    </form>
+    <script>
+        form1=document.form1;
+        button=document.getElementById("button");
+        button.onclick=function()
+        {
+            name=form1.nameinput.value;
+            document.write("Name :" , name,"<br>");
+            email=form1.mailinput.value;
+            document.write("Mail :" , email,"<br>");
+            mobile=form1.numberinput.value;
+            document.write("Mobile No :", mobile,"<br>");
+            checkbox=form1.checkboxinput.checked;
+            document.write("Agree with all terms and condition  " ,   checkbox,"<br>");
+            radio1=form1.radio1.value;
+            document.write("Do you really want to log in this page : ", radio1,"<br>");
+        }
+    </script>
+</body>
+</html>

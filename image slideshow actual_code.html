@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Image slideshow using JavaScript</title>
+        <script>
+            // array of URLs to be loaded
+            var urls = [
+                "https://imgur.com/download/yAKnWJ2",
+                "https://imgur.com/download/6bsZq05",
+                "https://imgur.com/download/fY0iQZR",
+                "https://imgur.com/download/aCkT7TN",
+                "https://imgur.com/download/wgdprUW",
+            ];
+ 
+            // initialization
+            var images = []; // array of images
+            var loaded = []; // whether or not loading is complete
+            for (i = 0; i < urls.length; i++) {
+                images.push(new Image());
+                loaded.push(false);
+            }
+ 
+            var current = 0; // current image being displayed
+            var interval = 1; // time interval(in seconds) after which the next image should be displayed
+ 
+            function changeImage() {
+                if (!loaded[current]) {
+                    // wait for the current image to load
+                    // display the loading message
+                    document.getElementById("loadmessage").innerHTML = "Still Loading Image " + (current+1)  + " .... ";
+                } else {
+                    // if current image has finished loading then do the following
+                    document.getElementById("loadmessage").innerHTML = ""; // remove the loading message
+ 
+                    // Change Image
+                    // Note: If you change image when this image has not yet loaded
+                    // User will see a blank page / image coming in little bit at a time
+                    slide = document.getElementById("slide");
+                    slide.innerHTML = ""; // remove previous image
+                    slide.appendChild(images[current]); // show current image
+ 
+                    // Update current
+                    // Note: If you update current when this image has not yet loaded
+                    // then for really slow connections, the slideshow will 'skip' images
+                    current++;
+                    if (current == urls.length)
+                        current = 0;
+                }
+            }
+ 
+            function preload(i) {
+                // load the ith image in the images array
+ 
+                if (i >= urls.length) {
+                    // all images have been loaded
+                    return;
+                }
+ 
+                images[i].src = urls[i]; // src set to the ith image in the images array
+                images[i].onload = function() {
+                    // when image has finished loading, set loaded[i] to true
+                    loaded[i] = true;
+ 
+                    // call preload on the next image (i + 1)
+                    // Note: If you call preload(i+1) outside of onload, then ALL images
+                    // will load at the very beginning. This means, the user won't be able
+                    // to see _any_ image till _all_ of them load. That is not what you want!
+                    preload(i + 1);
+                }
+ 
+            }
+ 
+            function main() {
+                // the main function
+                preload(0); // begin by preloading the first image
+                setInterval(changeImage, interval * 1000); // call changeImage() every 1000 milliseconds
+            }
+ 
+            window.onload = main; // when the document has finished loading, call main.
+        </script>
+    </head>
+    <body>
+        <div id="slide"></div>
+        <span id="loadmessage">Loading Image.... </span>
+    </body>
+</html>

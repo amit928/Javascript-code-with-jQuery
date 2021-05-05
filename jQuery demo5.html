@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 5</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p id="ptag" style=" background-color: blue; width: 200px;">This is the paragraph tag where we use the id name as ptag and now we write this to see the animation effects of jQuery</p><br>
+    <button id="btag">Click Me</button>
+    
+    <script>
+        $(document).ready(function()
+        {
+            $("#btag").click(function()
+            {
+                // $("#ptag").slideToggle();  //It will slide your paragraph up and down .
+
+                // $("#ptag").fadeToggle();  //It will toggle your paragraph visible and hidden .
+
+                // $("#ptag").slideUp();  //It will slide your paragraph UP only .
+
+                // $("#ptag").slideDown();  // It will slide your paragraph DOWN only .
+
+                // $("#ptag").fadeIn();  //It will make your paragraph visible  .
+
+                // $("#ptag").fadeOut();  //It will make your paragraph  hidden .
+
+                $("#ptag").animate({'margin':'200px'});  
+            });
+        });
+    </script>
+</body>
+</html>

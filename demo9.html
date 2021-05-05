@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform" onsubmit="return validateform()"  action="amit.php"  >
+        Name : <input type="text" name="nameinput"     id="username" required><b><span id="span1" style="color: red;"></span></b><br>
+        <br>
+        
+        Password:<input type="password" name="passwordinput"     id="password" required><b><span id="span2" style="color: red;"></span></b><br>
+        
+       
+        <button type="submit" > Submit </button> 
+    </form>
+    <script>
+        
+       function validateform()
+       {
+            var name=document.getElementById("username");
+            if(name.value.length<5)
+            {
+                var showerror1=document.getElementById("span1");
+                showerror1.innerHTML="*User name Must be more than than 5 characters";
+                return false;
+
+            }
+            else
+            {
+                document.getElementById("span1"),innerHTML="";
+            }
+            var password=document.getElementById("password");
+            if(password.value.length<8)
+            {
+                var showerror1=document.getElementById("span2");
+                showerror1.innerHTML="*Password Must be 8 or more than than 8 characters";
+                return false;
+                
+            }
+            if(password.search(/[0-9]/)==-1)
+            {
+                var showerror1=document.getElementById("span2");
+                showerror1.innerHTML="*Password must have be a number ";
+                return false;
+            }
+            else
+            {
+                document.getElementById("span2"),innerHTML="";
+            }
+            
+            
+
+
+       }
+    </script>
+    
+</body>
+</html>
